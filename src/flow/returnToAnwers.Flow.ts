@@ -64,7 +64,7 @@ export async function gestionaRespuestas(indice: any, numero: any, nombre: strin
                             type = 'abierta';
                             return '1.Salir';
                         }else if (x.toLowerCase() == 'multimedia') {
-                            const x = 'localhost:4200/#/anexo/'+org+'/'+arreglo['Respuestas'][current]['ID_PREGUNTA']+'/'+numero;
+                            const x = 'https://hirbo.arvispace.com/HirboChatBot/#/anexo/'+org+'/'+arreglo['Respuestas'][current]['ID_PREGUNTA']+'/'+numero;
                             exit = 1;
                             type = 'multimedia';
                             message = '🔗 Por favor, ingresa a la siguiente liga \n'+x+' \npara cargar los archivos solicitados ('+message+').\n\n📝 Después de subir los documentos, ingresa el código que se te mostrará para poder continuar. ¡Gracias!';
