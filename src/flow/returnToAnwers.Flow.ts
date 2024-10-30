@@ -29,7 +29,7 @@ export async function gestionaRespuestas(indice: any, numero: any, nombre: strin
             let iduser = 0;
             if (await  getuser()[0]['ID_CANDIDATO'] !=  undefined)
                 iduser = parseInt(getuser()[0]['ID_CANDIDATO']);
-            await changeCandidato({'ID_CANDIDATO':iduser,'FK_ID_ORGANIZACION':org,'PREGUNTAS':ids.join(','),'NUMERO_CANDIDATO':numero,'FK_ID_REQUISICION':Requisicion,'FK_ID_CAMPANIA':campania,'NOMBRE_CANDIDATO':nombre,'RESPUESTAS':ans.join(','),'CORRECTAS':(correctas+'/'+prioritarias)});
+            await changeCandidato({'ID_CANDIDATO':iduser,'FK_ID_ORGANIZACION':org,'PREGUNTAS':ids.join(','),'NUMERO_CANDIDATO':numero,'FK_ID_REQUISICION':Requisicion,'FK_ID_CAMPANIA':campania,'NOMBRE_CANDIDATO':nombre,'RESPUESTAS':ans.join('|'),'CORRECTAS':(correctas+'/'+prioritarias)});
             exit = 2;
             if(getDate()[0]==  'No hay automatizacion'){
                 message = messageConclude(nombre);
@@ -64,7 +64,7 @@ export async function gestionaRespuestas(indice: any, numero: any, nombre: strin
                             type = 'abierta';
                             return '1.Salir';
                         }else if (x.toLowerCase() == 'multimedia') {
-                            const x = 'https://hirbo.arvispace.com/HirboChatBot/#/anexo/'+org+'/'+arreglo['Respuestas'][current]['ID_PREGUNTA']+'/'+numero;
+                            const x = 'https://hirbo.mx/#/anexo/'+org+'/'+arreglo['Respuestas'][current]['ID_PREGUNTA']+'/'+numero;
                             exit = 1;
                             type = 'multimedia';
                             message = '🔗 Por favor, ingresa a la siguiente liga \n'+x+' \npara cargar los archivos solicitados ('+message+').\n\n📝 Después de subir los documentos, ingresa el código que se te mostrará para poder continuar. ¡Gracias!';

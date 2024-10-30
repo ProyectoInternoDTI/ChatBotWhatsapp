@@ -14,7 +14,8 @@
   "dependencies": {
     "@builderbot/bot": "1.2.2",
     "@builderbot/provider-baileys": "1.2.2",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "pnpm": "^9.12.3"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
