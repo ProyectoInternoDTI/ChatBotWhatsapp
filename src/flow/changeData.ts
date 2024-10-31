@@ -10,7 +10,7 @@ import {
 } from "./setData";
 
 export async  function changeCandidato(params:any){
-    const url = 'https://hirbo.arvispace.com/services/Back/Rutas.php?interviewChatbot';
+    const url = 'https://hirbo.arvispace.com/services/Back/RutasPublic.php?interviewChatbot';
     try {
         const dta = JSON.stringify({'valores': params,'action':'candidatos',"changeDate":true});
         const response = await fetch(url, {
@@ -28,7 +28,7 @@ export async  function changeCandidato(params:any){
     }
 }
 export async  function existUser(number:any,id:any){
-    const url = 'https://hirbo.arvispace.com/services/Back/Rutas.php?infoCandidato';
+    const url = 'https://hirbo.arvispace.com/services/Back/RutasPublic.php?infoCandidato';
     try {
         const dta = JSON.stringify({'numero': number,"org":id});
         const response = await fetch(url, {
@@ -46,7 +46,7 @@ export async  function existUser(number:any,id:any){
     }
 }
 export async  function validCode(org:any,num:any,code:any){
-    const url = 'https://hirbo.arvispace.com/services/Back/Rutas.php?getInfoValidCode';
+    const url = 'https://hirbo.arvispace.com/services/Back/RutasPublic.php?getInfoValidCode';
     try {
         const dta = JSON.stringify({"id_org":org, "num":num, "code":code});
         const response = await fetch(url, {
@@ -64,7 +64,7 @@ export async  function validCode(org:any,num:any,code:any){
     }
 }
 export async  function getCampaniasChange(key:any){
-    const url = 'https://hirbo.arvispace.com/services/Back/Rutas.php?getCampanias';
+    const url = 'https://hirbo.arvispace.com/services/Back/RutasPublic.php?getCampanias';
     try {
         const dta = JSON.stringify({"key":key});
         const response = await fetch(url, {
@@ -82,7 +82,7 @@ export async  function getCampaniasChange(key:any){
 }
 export async  function changeStatusVacante(org:any,cam:any,req:any,cand:any,){
     console.log('Apenas va entrando');
-    const url = 'https://hirbo.arvispace.com/services/Back/Rutas.php?getInfoVacante';
+    const url = 'https://hirbo.arvispace.com/services/Back/RutasPublic.php?getInfoVacante';
     try {
         const dta = JSON.stringify({"org":org,"campania":cam,"requisicion":req,"candidato":cand});
         const response = await fetch(url, {
@@ -100,7 +100,7 @@ export async  function changeStatusVacante(org:any,cam:any,req:any,cand:any,){
     }
 }
 export async  function getRequisicionesChange(org:any,campain:any){
-    const url = 'https://hirbo.arvispace.com/services/Back/Rutas.php?getRequisiciones';
+    const url = 'https://hirbo.arvispace.com/services/Back/RutasPublic.php?getRequisiciones';
     try {
         const dta = JSON.stringify({"id_org":org,"id_campain":campain});
         const response = await fetch(url, {
@@ -117,7 +117,7 @@ export async  function getRequisicionesChange(org:any,campain:any){
     }
 }
 export async  function updateStatus(id:any,tbl:any){
-    const url = 'https://hirbo.arvispace.com/services/Back/Rutas.php?updateStatus';
+    const url = 'https://hirbo.arvispace.com/services/Back/RutasPublic.php?updateStatus';
     try {
         const dta = JSON.stringify({"action":tbl,"id":id});
         const response = await fetch(url, {
@@ -135,7 +135,7 @@ export async  function updateStatus(id:any,tbl:any){
     }
 }
 export async  function getAnswersChange(org:any,campain:any,idreq:any){
-    const url = 'https://hirbo.arvispace.com/services/Back/Rutas.php?getQuestions';
+    const url = 'https://hirbo.arvispace.com/services/Back/RutasPublic.php?getQuestions';
     try {
         const dta = JSON.stringify({"id_org":org,"id_campain":campain,"id_requisicion":idreq});
         const response = await fetch(url, {
